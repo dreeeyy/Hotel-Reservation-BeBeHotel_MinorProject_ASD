@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/home.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
     </head>
-    <title>BBhotel</title>
+    <title>Discover the Hotel</title>
     
     <body>
         <div class="navbar">

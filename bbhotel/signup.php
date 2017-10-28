@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
     </head>
-    <title>BBhotel</title>
+    <title>Sign Up</title>
     
     <script language="javascript" type="text/javascript">
         function fun_val()
