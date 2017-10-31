@@ -13,7 +13,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/signup.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
     </head>
     <title>Sign Up</title>
@@ -292,7 +292,51 @@
         
         <div id="content_con_login">
             <div id="content_login">
-
+                <form>
+                    <div class="signup_text">BBhotel | Sign Up</div>
+                    <div class="signup_con">
+                        <span class="uname">
+                            <b>Username</b>
+                            <input type="text" placeholder="Enter Username" name="username" required>
+                        </span>
+                        <span class="pword">
+                            <b>Password</b>
+                            <input type="password" placeholder="Enter Password" name="password" required>
+                        </span>
+                        <span class="cpword">
+                            <b>Confirm Password</b>
+                            <input type="password" placeholder="Enter Confirm Password" name="password" required>
+                        </span>
+                        <span class="fname">
+                            <b>First Name</b>
+                            <input type="text" placeholder="Enter First Name" name="fname" required>
+                        </span>
+                        <span class="lname">
+                            <b>Last Name</b>
+                            <input type="text" placeholder="Enter Last Name" name="lname" required>
+                        </span>
+                        <span class="mobile">
+                            <b>Mobile Number</b>
+                            <input type="text" placeholder="Enter Mobile" name="mobile" required>
+                        </span>
+                        <span class="address">
+                            <b>Address</b>
+                            <input type="text" placeholder="Enter Address" name="address" required>
+                        </span>
+                        <span class="gender">
+                            <b>Gender:</b> <br>
+                            <input type="radio" name="gender" value="Female">Female <br>
+                            <input type="radio" name="gender" value="Male">Male <br><br>
+                        </span>
+                        <span class="type">
+                            <b>User Type:</b> <br>
+                            <input type="radio" name="type" value="Super Admin" disabled>Super Admin <br>
+                            <input type="radio" name="type" value="Admin" disabled>Admin <br>
+                            <input type="radio" name="type" value="User" required>User <br><br>
+                        </span>
+                        <button class="signup_button" type="submit" name="submit">Sign Up</button>
+                    </div>
+                </form>
             </div>
             <div id="footer">
                 BBhotel &copy 2017

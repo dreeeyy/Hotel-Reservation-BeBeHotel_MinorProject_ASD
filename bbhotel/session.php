@@ -11,12 +11,19 @@
 
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	$q="select * from user where username='$username' and password='$password'";
+    $type=$_POST['type'];
+	$q="select * from users where type='$type' and username='$username' and password='$password'";
 	$res=mysqli_query($l, $q);
 	if(mysqli_num_rows($res)>0)
 	{
-	  $_SESSION['username']=$username;
-		echo "<script>window.location='home.php';</script>";
+        $_SESSION['username']=$username;
+        if($type=='Super Admin'){
+            echo "<script>window.location='superadmin.php';</script>";
+        }else if($type=='Admin'){
+            echo "<script>window.location='admin.php';</script>";
+        }else{
+            echo "<script>window.location='users.php';</script>";
+        }
 	}
 	else
 	{

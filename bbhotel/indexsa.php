@@ -5,8 +5,8 @@
     if(empty($_SESSION)) // if the session not yet started     
         session_start(); 
     if(isset($_SESSION['username']))
-    { // if already login   
-        header("location: home.php"); // send to home page   
+    { // if already login
+        header("location: superadmin.php"); // send to home page   
         exit;
     } 
 ?>
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
     </head>
-    <title>Rooms & Suites</title>
+    <title>BBhotel</title>
     
     <script language="javascript" type="text/javascript">
         function fun_val()
@@ -87,6 +87,11 @@
             text-align: center;
         }
         
+        .type {
+            position: relative;
+            top: 60px;
+            left: 55px;
+        }
         .login_text {
             position: absolute;
             text-align: center;
@@ -115,7 +120,7 @@
         /* Center the image and position the close button */
         .login_container {
             position: relative;
-            height: 240px;
+            height: 260px;
             padding: 16px;
         }
         
@@ -204,7 +209,7 @@
     <body>
         <div class="navbar">
             <div class="logo">
-                <a href="index.php">
+                <a href="indexsa.php">
                     <img src="images/logo.png" width="75px;">
                 </a>
             </div>
@@ -263,7 +268,11 @@
                         <input type="password" placeholder="Enter Password" name="password" required>
                     </span>
                     <span class="password"><a href="#">forgot your password?</a></span>
-                    
+                    <span class="type">
+                        <input type="radio" name="type" value="Super Admin" required>Super Admin &nbsp;
+                        <input type="radio" name="type" value="Admin" required>Admin &nbsp;
+                        <input type="radio" name="type" value="User" required>User
+                    </span>
                     <button class="login_button" type="submit" name="submit" onClick="return fun_val();">Login</button>
                     
                     <span class="noaccount">

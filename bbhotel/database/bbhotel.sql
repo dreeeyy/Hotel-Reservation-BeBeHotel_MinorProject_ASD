@@ -16,32 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `user_type` set('Super Admin','Admin','User') DEFAULT NULL,
-  `username` varchar(32) DEFAULT NULL,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` set('Super Admin','Admin','User') DEFAULT NULL,
+  `username` varchar(10) DEFAULT NULL,
   `password` varchar(32) DEFAULT NULL,
   `fname` varchar(32) DEFAULT NULL,
   `lname` varchar(32) DEFAULT NULL,
   `mobile` varchar(32) DEFAULT NULL,
-  `address` varchar(32) DEFAULT NULL,
-  `gender` set('Female','Male') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `address` varchar(64) DEFAULT NULL,
+  `gender` set('Female','Male') DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('Super Admin','Yllorra','rolleenao-07','Rolly','Linao','09156876676','Bo. Obrero, Davao City','Male');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Super Admin','superadmin','superadmin','Super','Admin','09876543210','Davao City','Male'),(2,'Admin','admin','admin','Ad','Min','09876543211','Indangan','Female'),(3,'User','user','user','Us','Er','09876543212','Buhangin','Female'),(4,'User','user1','user1','Usone','Erone','09876543213','Obrero','Female');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-30 12:37:37
+-- Dump completed on 2017-10-31 15:08:52

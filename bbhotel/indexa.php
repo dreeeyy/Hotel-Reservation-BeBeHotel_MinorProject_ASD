@@ -5,8 +5,8 @@
     if(empty($_SESSION)) // if the session not yet started     
         session_start(); 
     if(isset($_SESSION['username']))
-    { // if already login   
-        header("location: home.php"); // send to home page   
+    { // if already login
+        header("location: admin.php"); // send to home page   
         exit;
     } 
 ?>
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
     </head>
-    <title>Practical Information</title>
+    <title>BBhotel</title>
     
     <script language="javascript" type="text/javascript">
         function fun_val()
@@ -87,6 +87,11 @@
             text-align: center;
         }
         
+        .type {
+            position: relative;
+            top: 60px;
+            left: 55px;
+        }
         .login_text {
             position: absolute;
             text-align: center;
@@ -115,7 +120,7 @@
         /* Center the image and position the close button */
         .login_container {
             position: relative;
-            height: 240px;
+            height: 260px;
             padding: 16px;
         }
         
@@ -204,7 +209,7 @@
     <body>
         <div class="navbar">
             <div class="logo">
-                <a href="index.php">
+                <a href="indexa.php">
                     <img src="images/logo.png" width="75px;">
                 </a>
             </div>
@@ -212,33 +217,33 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DICOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="discover-hotel.php#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="discover-hotel.php#hotel-services">HOTEL SERVICES</a>
-                        <a href="discover-hotel.php#awards">AWARDS</a>
+                        <a href="#virtual-tour">VIRTUAL TOUR</a>
+                        <a href="#hotel-services">HOTEL SERVICES</a>
+                        <a href="#awards">AWARDS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">ROOMS & SUITES</button>
                     <div class="dropdown_contents">
-                        <a href="rooms-suites.php#rooms">ROOMS</a>
-                        <a href="rooms-suites.php#junior-suites">JUNIOR SUITES</a>
-                        <a href="rooms-suites.php#suites">SUITES</a>
-                        <a href="rooms-suites.php#diamond-suites">DIAMOND SUITES</a>
+                        <a href="#rooms">ROOMS</a>
+                        <a href="#junior-suites">JUNIOR SUITES</a>
+                        <a href="#suites">SUITES</a>
+                        <a href="#diamond-suites">DIAMOND SUITES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="news-special-offers.php#news">NEWS</a>
-                        <a href="news-special-offers.php#special-offers">SPECIAL OFFERS</a>
+                        <a href="#news">NEWS</a>
+                        <a href="#special-offers">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="practical-information.php#practical-details">PRACTICAL DETAILS</a>
-                        <a href="practical-information.php#contact-us">CONTACT US</a>
-                        <a href="practical-information.php#gift-ideas">GIFT IDEAS</a>
+                        <a href="#practical-details">PRACTICAL DETAILS</a>
+                        <a href="#contact-us">CONTACT US</a>
+                        <a href="#gift-ideas">GIFT IDEAS</a>
                     </div>
                 </div>
             </div>
@@ -263,7 +268,11 @@
                         <input type="password" placeholder="Enter Password" name="password" required>
                     </span>
                     <span class="password"><a href="#">forgot your password?</a></span>
-                    
+                    <span class="type">
+                        <input type="radio" name="type" value="Super Admin" required>Super Admin &nbsp;
+                        <input type="radio" name="type" value="Admin" required>Admin &nbsp;
+                        <input type="radio" name="type" value="User" required>User
+                    </span>
                     <button class="login_button" type="submit" name="submit" onClick="return fun_val();">Login</button>
                     
                     <span class="noaccount">

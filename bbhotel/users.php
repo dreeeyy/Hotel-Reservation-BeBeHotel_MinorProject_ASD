@@ -13,10 +13,10 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/users.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
     </head>
-    <title>Settings</title>
+    <title>BBhotel</title>
     
     <body>
         <div class="navbar">
@@ -29,33 +29,33 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DICOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="user-discover-hotel.php#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="user-discover-hotel.php#hotel-services">HOTEL SERVICES</a>
-                        <a href="user-discover-hotel.php#awards">AWARDS</a>
+                        <a href="#virtual-tour">VIRTUAL TOUR</a>
+                        <a href="#hotel-services">HOTEL SERVICES</a>
+                        <a href="#awards">AWARDS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">ROOMS & SUITES</button>
                     <div class="dropdown_contents">
-                        <a href="user-rooms-suites.php#rooms">ROOMS</a>
-                        <a href="user-rooms-suites.php#junior-suites">JUNIOR SUITES</a>
-                        <a href="user-rooms-suites.php#suites">SUITES</a>
-                        <a href="user-rooms-suites.php#diamond-suites">DIAMOND SUITES</a>
+                        <a href="#rooms">ROOMS</a>
+                        <a href="#junior-suites">JUNIOR SUITES</a>
+                        <a href="#suites">SUITES</a>
+                        <a href="#diamond-suites">DIAMOND SUITES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="user-news-special-offers.php#news">NEWS</a>
-                        <a href="user-news-special-offers.php#special-offers">SPECIAL OFFERS</a>
+                        <a href="#news">NEWS</a>
+                        <a href="#special-offers">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="user-practical-information.php#practical-details">PRACTICAL DETAILS</a>
-                        <a href="user-practical-information.php#contact-us">CONTACT US</a>
-                        <a href="user-practical-information.php#gift-ideas">GIFT IDEAS</a>
+                        <a href="#practical-details">PRACTICAL DETAILS</a>
+                        <a href="#contact-us">CONTACT US</a>
+                        <a href="#gift-ideas">GIFT IDEAS</a>
                     </div>
                 </div>
             </div>
@@ -68,8 +68,8 @@
                 </button>
                     
                 <div class="contents_account_user">
-                    <a href="profile.php">PROFILE</a>
-                    <a href="settings.php">SETTINGS</a>
+                    <a href="#">PROFILE</a>
+                    <a href="#">SETTINGS</a>
                     <a href="logout.php">LOG OUT</a>
                 </div>
             </div>

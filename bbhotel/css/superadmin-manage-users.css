@@ -55,7 +55,7 @@ body {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 150px;
+    width: 150px;
     box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
     z-index: 1;
 }
@@ -84,7 +84,7 @@ body {
 }
 
 .content_account_user .account_user {
-    font-size: 11px;    
+    font-size: 12px;    
     border: none;
     outline: none;
     color: white;
@@ -120,113 +120,69 @@ body {
     display: block;
 }
 
-
 /*Content*/
+#managetext {
+    position: relative;
+    width: 1300px;
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial;
+    padding: 15px 0px;
+}
 #content_con_login {
 	position: relative;
 	margin: auto;
-	height: 690px;
 	width: 1300px;
 	box-shadow: 0px 2px 5px black;
 }
 
 #content_login {
 	position: relative;
+	margin: auto;
+    padding: 40px 0px 75px;
 	width: 1300px;
-    height: 650px;
 	background-color: white;
+}
+
+#content_login table {
     font-family: Arial;
+    font-size: 13px;
 }
 
-.signup_text {
-    position: relative;
-    margin: auto;
-    width: 300px;
-    top: 75px;
-    font-size: 30px;
-    text-align: center;
-}
-
-.signup_con {
-    position: relative;
-    margin: auto;
-    top: 100px;
-    width: 1000px;
-    
-}
-
-.uname {
-    position: absolute;
-    width: 450px;
-    left: 0px;
-    top: 0px;
-}
-
-.pword {
-    position: absolute;
-    width: 450px;
-    left: 0px;
-    top: 100px;
-}
-
-.cpword {
-    position: absolute;
-    width: 450px;
-    left: 0px;
-    top: 200px;
-}
-
-.fname {
-    position: absolute;
-    width: 450px;
-    left: 0px;
-    top: 300px;
-}
-
-.lname {
-    position: absolute;
-    width: 450px;
-    left: 0px;
-    top: 400px;
-}
-
-.mobile {
-    position: absolute;
-    width: 450px;
-    right: 0px;
-    top: 0px;
-}
-
-.address {
-    position: absolute;
-    width: 450px;
-    right: 0px;
-    top: 100px;
-}
-
-.gender {
-    position: absolute;
-    width: 450px;
-    right: 0px;
-    top: 200px;
-}
-
-.type {
-    position: absolute;
-    width: 450px;
-    right: 0px;
-    top: 300px;
-}
-
-.signup_button {
-    position: absolute;
-    width: 450px;
-    right: 0px;
-    top: 420px;
+#content_login table tr th {
+    padding: 0px 30px;
+    font-size: 15px;
     background-color: darkgoldenrod;
     color: white;
-    padding: 15px;
-    border: solid 1px darkgoldenrod;
+}
+
+#content_login table tr td {
+    background-color: #f9f9f9;
+}
+
+#content_login table tr td:hover{
+    background-color: #ddd;
+}
+
+#content_login table tr a {
+    text-decoration: none;
+}
+
+#addrecord {
+    position: absolute;
+    right: 46px;
+    font-size: 13px;
+    font-family: Arial;
+    background-color: #f9f9f9;
+    padding: 15px 58px;
+}
+
+#addrecord:hover {
+    background-color: #ddd;
+}
+
+#addrecord a{
+    text-decoration: none;
 }
 
 /*Footer*/
