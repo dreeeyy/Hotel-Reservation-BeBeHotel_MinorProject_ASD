@@ -15,6 +15,7 @@
     <head>
         <link rel="stylesheet" href="css/index.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
+        <script src="script/Slideshow.js"></script>
     </head>
     <title>BBhotel</title>
     
@@ -288,15 +289,44 @@
                 </div>
             </form>
         </div>
+<!-- Header End-->
+<!--Slideshow-->
+<div class="slideshow-container">
+
+    <div class="mySlides">
+        <img src="images/slides/1.jpg" style="width: 100%">
+        <div class="text">BebeHotel</div>
+    </div>
+
+    <div class="mySlides">
+        <img src="images/slides/2.jpg" style="width: 100%">
+        <div class="text">BebeHotel</div>
+    </div>
+    
+    <div class="mySlides">
+        <img src="images/slides/3.jpg" style="width: 100%">
+        <div class="text">BebeHotel</div>
+    </div>
+</div>
+
+<div style="text-align: center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<!--EndSlideshow-->
 
         <script>
             var login_popup = document.getElementById('login_pop');
+            
 
             window.onclick = function(event) {
                 if (event.target == login_popup) {
                     login_popup.style.display = "none";
                 }
             }
+
         </script>
         
         <div id="content_con_login">
