@@ -137,7 +137,6 @@ body {
 	width: 1300px;
 	background-color: white;
 }
-
 /*Footer*/
 #footer {
 	position: relative;
@@ -153,66 +152,105 @@ body {
 	font-family: Arial;
 }
 
-    /*Audrey*/
-/*Slideshow*/
-*
-{
-    box-sizing: border-box;
-}
-.mySlides {
-    display: none;
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-/*Slide show container*/
-.slideshow-container{
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-}
-
-/*Caption*/
-.text{
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
+/*p{
+    z-index: 1000;
+    font-size: 100px;
     text-align: center;
+    position: absolute;
+    width: 20%;
+    color: white;
+    padding-top: 100px;
+
+}*/
+.slider{
+    overflow: hidden;
+    height: 100%;
 }
 
-/*dots*/
-.dot{
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease; 
+.slider figure div {
+    width: 20%;
+    float: left;  
 }
 
-.active{
-    background-color: #717171;
-}
-/*Fading animation*/
-.fade{
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+.slider figure img {
+    width: 100%;
+    float: left;
 }
 
-@-webkit-keyframes fade{
-    from {opacity: .4}
-    to {opacity: 1}
+.slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slidy infinite;
 }
 
-@keyframes fade{
-    from {opacity: .4}
-    to {opacity: 1}
+@keyframes slidy {
+    0%{
+        left: 0%;
+    }
+
+    10%{
+        left: 0%
+    }
+    12%{
+        left: -100%;
+    }
+
+    22%{
+        left: -100%;
+    }
+
+    24%{
+        left: -200%;
+    }
+    34%{
+        left: -200%;
+    }
+    36%{
+        left: -300%;
+    }
+    46%{
+        left: -300%;
+    }
+    48%{
+        left: -400%;
+    }
+    58%{
+        left: -400%;
+    }
+    60%{
+        left: -300%;
+    }
+    70%{
+        left: -300%;
+    }
+    72%{
+        left: -200%;
+    }
+    82%{
+        left: -200%;
+    }
+    84%{
+        left: -100%;
+    }
+    94%{
+        left: -100%;
+    }
+    96%{
+        left: 0%;
+    }
 }
 
-@media only screen and (max-width: 300px;){
-    .text {font-size: 11px}
-}
+
+
+
+
+    

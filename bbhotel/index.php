@@ -15,7 +15,7 @@
     <head>
         <link rel="stylesheet" href="css/index.css">
         <link rel="shortcut icon" href="images/head_logo.png" />
-        <script src="script/Slideshow.js"></script>
+        <script src="scripts/Slideshow.js"></script>
     </head>
     <title>BBhotel</title>
     
@@ -290,32 +290,7 @@
             </form>
         </div>
 <!-- Header End-->
-<!--Slideshow-->
-<div class="slideshow-container">
 
-    <div class="mySlides">
-        <img src="images/slides/1.jpg" style="width: 100%">
-        <div class="text">BebeHotel</div>
-    </div>
-
-    <div class="mySlides">
-        <img src="images/slides/2.jpg" style="width: 100%">
-        <div class="text">BebeHotel</div>
-    </div>
-    
-    <div class="mySlides">
-        <img src="images/slides/3.jpg" style="width: 100%">
-        <div class="text">BebeHotel</div>
-    </div>
-</div>
-
-<div style="text-align: center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-</div>
-
-<!--EndSlideshow-->
 
         <script>
             var login_popup = document.getElementById('login_pop');
@@ -328,14 +303,40 @@
             }
 
         </script>
-        
+
+
+
         <div id="content_con_login">
-            <div id="content_login">
+          <div id="content_login">
+
+            <div class="slider">
+            <figure>
+                <div class="slide">
+                    <img src="images/slides/1.jpg">
+                </div>
+
+                <div class="slide">
+                    <img src="images/slides/2.jpg">
+                </div>
+
+                <div class="slide">
+                    <img src="images/slides/3.jpg">
+                </div>
+
+                <div class="slide">
+                    <img src="images/slides/4.jpg">
+                </div>
+
+                <div class="slide">
+                    <img src="images/slides/5.jpg">
+                </div>
+            </figure>
+
 
             </div>
             <div id="footer">
                 BBhotel &copy 2017
             </div>
-	   </div>
+	  </div>
     </body>
 </html>
