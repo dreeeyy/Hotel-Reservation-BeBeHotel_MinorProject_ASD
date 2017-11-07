@@ -125,25 +125,27 @@ body {
 #content_con_login {
 	position: relative;
 	margin: auto;
-	height: 700px;
+    top: 25px;
+	height: 690px;
 	width: 1300px;
 	box-shadow: 0px 2px 5px black;
 }
 
 #content_login {
 	position: relative;
-	margin: auto;
-	height: 660px;
 	width: 1300px;
+    height: 650px;
 	background-color: white;
+    font-family: Arial;
 }
+
 /*Footer*/
 #footer {
 	position: relative;
 	bottom: 0;
 	margin: auto;
 	height: 26px;
-	width: 1300px;
+	width: 100%;
 	background-color: darkgoldenrod;
 	text-align: center;
 	padding-top: 14px;
@@ -152,23 +154,8 @@ body {
 	font-family: Arial;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
 
-/*p{
-    z-index: 1000;
-    font-size: 100px;
-    text-align: center;
-    position: absolute;
-    width: 20%;
-    color: white;
-    padding-top: 100px;
-
-}*/
+/*SLider*/
 .slider{
     overflow: hidden;
     height: 100%;
@@ -248,9 +235,3 @@ body {
         left: 0%;
     }
 }
-
-
-
-
-
-    

@@ -91,7 +91,7 @@
         .type {
             position: relative;
             top: 60px;
-            left: 55px;
+            left: 35px;
         }
         .login_text {
             position: absolute;
@@ -272,7 +272,7 @@
                     <span class="type">
                         <input type="radio" name="type" value="Super Admin" required>Super Admin &nbsp;
                         <input type="radio" name="type" value="Admin" required>Admin &nbsp;
-                        <input type="radio" name="type" value="User" required>User
+                        <input type="radio" name="type" value="Customer" required>Customer
                     </span>
                     <button class="login_button" type="submit" name="submit" onClick="return fun_val();">Login</button>
                     
@@ -289,54 +289,46 @@
                 </div>
             </form>
         </div>
-<!-- Header End-->
-
 
         <script>
             var login_popup = document.getElementById('login_pop');
-            
 
             window.onclick = function(event) {
                 if (event.target == login_popup) {
                     login_popup.style.display = "none";
                 }
             }
-
         </script>
-
-
-
+        
         <div id="content_con_login">
-          <div id="content_login">
+            <div id="content_login">
+                <div class="slider">
+                    <figure>
+                        <div class="slide">
+                            <img src="images/slides/1.jpg">
+                        </div>
 
-            <div class="slider">
-            <figure>
-                <div class="slide">
-                    <img src="images/slides/1.jpg">
+                        <div class="slide">
+                            <img src="images/slides/2.jpg">
+                        </div>
+
+                        <div class="slide">
+                            <img src="images/slides/3.jpg">
+                        </div>
+
+                        <div class="slide">
+                            <img src="images/slides/4.jpg">
+                        </div>
+
+                        <div class="slide">
+                            <img src="images/slides/5.jpg">
+                        </div>
+                    </figure>
                 </div>
-
-                <div class="slide">
-                    <img src="images/slides/2.jpg">
-                </div>
-
-                <div class="slide">
-                    <img src="images/slides/3.jpg">
-                </div>
-
-                <div class="slide">
-                    <img src="images/slides/4.jpg">
-                </div>
-
-                <div class="slide">
-                    <img src="images/slides/5.jpg">
-                </div>
-            </figure>
-
-
             </div>
             <div id="footer">
                 BBhotel &copy 2017
             </div>
-	  </div>
+	   </div>
     </body>
 </html>

@@ -92,46 +92,46 @@
                         <th align="center">Gender</th>
                         <th colspan="2" align="center">Operations</th>
                     </tr>
-                <?php
-                // Create connection
-                $conn = new mysqli($server, $unm, $pwd, $db);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-
-                $sql = "SELECT * FROM users";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-                    ?>
-                    <tr height="50px">
-                        <td align="center"><?php echo $row["id"];?></td>
-                        <td align="center"><?php echo $row["type"];?></td>
-                        <td align="center"><?php echo $row["username"];?></td>
-                        <td align="center"><?php echo $row["password"];?></td>
-                        <td align="center"><?php echo $row["fname"];?></td>
-                        <td align="center"><?php echo $row["lname"];?></td>
-                        <td align="center"><?php echo $row["mobile"];?></td>
-                        <td align="center"><?php echo $row["address"];?></td>
-                        <td align="center"><?php echo $row["gender"];?></td>
-                        <td align="center" width="50px"><a href="#">modify</a></td>
-                        <td align="center" width="50px"><a href="#">delete</a></td>
-                    </tr>
-                    <?php 
-                    }
-                } else {
-                    ?>
-                    <tr>
-                         <td colspan="9" align="center"><?php echo "0 results";?></td>
-                    </tr>
                     <?php
-                }
+                    // Create connection
+                    $conn = new mysqli($server, $unm, $pwd, $db);
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
 
-                $conn->close();
-                ?>
+                    $sql = "SELECT * FROM users";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                        ?>
+                        <tr height="50px">
+                            <td align="center"><?php echo $row["id"];?></td>
+                            <td align="center"><?php echo $row["type"];?></td>
+                            <td align="center"><?php echo $row["username"];?></td>
+                            <td align="center"><?php echo $row["password"];?></td>
+                            <td align="center"><?php echo $row["fname"];?></td>
+                            <td align="center"><?php echo $row["lname"];?></td>
+                            <td align="center"><?php echo $row["mobile"];?></td>
+                            <td align="center"><?php echo $row["address"];?></td>
+                            <td align="center"><?php echo $row["gender"];?></td>
+                            <td align="center" width="50px"><a href="#">modify</a></td>
+                            <td align="center" width="50px"><a href="#">delete</a></td>
+                        </tr>
+                        <?php 
+                        }
+                    } else {
+                        ?>
+                        <tr>
+                             <td colspan="9" align="center"><?php echo "0 results";?></td>
+                        </tr>
+                        <?php
+                    }
+
+                    $conn->close();
+                    ?>
                 </table>
                 <div id="addrecord">
                     <a href="#">new</a>
