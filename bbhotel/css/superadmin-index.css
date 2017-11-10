@@ -121,10 +121,17 @@ body {
 }
 
 /*Content*/
+#managetext {
+    position: relative;
+    width: 1300px;
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial;
+    padding: 15px 0px;
+}
 #content_con_login {
 	position: relative;
 	margin: auto;
-	height: 700px;
 	width: 1300px;
 	box-shadow: 0px 2px 5px black;
 }
@@ -132,9 +139,19 @@ body {
 #content_login {
 	position: relative;
 	margin: auto;
-	height: 660px;
+    padding: 40px 0px 75px;
 	width: 1300px;
 	background-color: white;
+}
+
+.dashmenu {
+    font-family: Arial;
+}
+
+.dashmenu tr th{
+    color: white;
+    padding: 10px;
+    background-color: darkgoldenrod;
 }
 
 /*Footer*/

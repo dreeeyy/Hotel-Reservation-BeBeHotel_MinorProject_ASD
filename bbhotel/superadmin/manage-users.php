@@ -3,11 +3,21 @@
 <?php
     include '../connection.php'; //connect the connection page
     if(empty($_SESSION)) // if the session not yet started     
-        session_start(); 
-    if(!isset($_SESSION['uname'])) 
-    { //if not yet logged in    
-        header("location: ../index.php");// send to login page    
-        exit; 
+        session_start();
+
+    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Admin')
+    { // if already login
+        header("location: ../admin/"); // send to home page   
+        exit;
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Customer')
+    { // if already login
+        header("location: ../customer/"); // send to home page   
+        exit;
+    }
+    else if($_SESSION['user_type']==NULL){
+        header("location: ../"); // send to home page   
+        exit;
     }
 
     if(isset($_GET['delete_id']))
@@ -26,14 +36,14 @@
         <script type="text/javascript">
             function edt_id(id)
             {
-                if(confirm('Sure to edit ?'))
+                if(confirm('Are you sure you want to modify the data?'))
                 {
                     window.location.href='modify-users.php?edit_id='+id;
                 }
             }
             function delete_id(id)
             {
-                if(confirm('Sure to Delete ?'))
+                if(confirm('Are you sure you want to delete the data?'))
                 {
                     window.location.href='manage-users.php?delete_id='+id;
                 }
@@ -51,35 +61,32 @@
             </div>
             <div class="menu">
                 <div class="dropdown_content">
-                    <button class="dropbutton">DICOVER THE HOTEL</button>
+                    <button class="dropbutton">DASHBOARD</button>
                     <div class="dropdown_contents">
-                        <a href="#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="#hotel-services">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="index.php">RECENT ACTIVITY</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">ROOMS & SUITES</button>
+                    <button class="dropbutton">MANAGEMENT</button>
                     <div class="dropdown_contents">
-                        <a href="#rooms">ROOMS</a>
-                        <a href="#junior-suites">JUNIOR SUITES</a>
-                        <a href="#suites">SUITES</a>
-                        <a href="#diamond-suites">DIAMOND SUITES</a>
+                        <a href="#">ROOMS</a>
+                        <a href="manage-users.php">USERS</a>
+                        <a href="#">BOOKINGS</a>
+                        <a href="manage-customers.php">CUSTOMERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
+                    <button class="dropbutton">HELP</button>
                     <div class="dropdown_contents">
-                        <a href="#news">NEWS</a>
-                        <a href="#special-offers">SPECIAL OFFERS</a>
+                        <a href="#">HOW TO USE</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">PRACTICAL INFORMATION</button>
+                    <button class="dropbutton">ABOUT</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="#">WEBSITE</a>
+                        <a href="#">DEVELOPMENT</a>
+                        <a href="#">CONTACT</a>
                     </div>
                 </div>
             </div>
@@ -104,16 +111,16 @@
                 <div id="managetext">Manage Users</div>
                 <table align="center">
                     <tr height="50px">
-                        <th align="center">ID</th>
-                        <th align="center">User Type</th>
-                        <th align="center">Username</th>
-                        <th align="center">Password</th>
-                        <th align="center">First Name</th>
-                        <th align="center">Last Name</th>
-                        <th align="center">Mobile</th>
-                        <th align="center">Address</th>
-                        <th align="center">Gender</th>
-                        <th colspan="2" align="center">Operations</th>
+                        <th>ID</th>
+                        <th>User Type</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Mobile</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th colspan="2">Operations</th>
                     </tr>
                     <?php
                         $sql_query="SELECT id,user_type,uname,pword,fname,lname,mnumber,address,gender FROM users WHERE user_type!='Super Admin'";
@@ -143,7 +150,7 @@
                         {
                             ?>
                             <tr height="50px">
-                            <td colspan="11" align="center">No Data Found !</td>
+                            <td colspan="11" align="center">No data found!</td>
                             </tr>
                             <?php
                         }

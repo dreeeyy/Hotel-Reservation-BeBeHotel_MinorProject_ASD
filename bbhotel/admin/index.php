@@ -2,21 +2,31 @@
 
 <?php
     include '../connection.php'; //connect the connection page
-    if(empty($_SESSION)) // if the session not yet started     
-        session_start(); 
-    if(!isset($_SESSION['uname'])) 
-    { //if not yet logged in    
-        header("location: ../index.php");// send to login page    
-        exit; 
-    }  
+    if(empty($_SESSION))    
+         session_start();
+
+    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
+    { // if already login
+        header("location: ../superadmin/"); // send to home page   
+        exit;
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Customer')
+    { // if already login
+        header("location: ../customer/"); // send to home page   
+        exit;
+    }
+    else if($_SESSION['user_type']==NULL){
+        header("location: ../"); // send to home page   
+        exit;
+    }
 ?> 
 
 <html>
     <head>
-        <link rel="stylesheet" href="../css/superadmin-manage-users.css">
+        <link rel="stylesheet" href="../css/admin-index.css">
         <link rel="shortcut icon" href="../images/head_logo.png" />
     </head>
-    <title>Hotel Management</title>
+    <title>Recent Activity</title>
     
     <body>
         <div class="navbar">
@@ -27,35 +37,30 @@
             </div>
             <div class="menu">
                 <div class="dropdown_content">
-                    <button class="dropbutton">DICOVER THE HOTEL</button>
+                    <button class="dropbutton">DASHBOARD</button>
                     <div class="dropdown_contents">
-                        <a href="#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="#hotel-services">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="index.php">RECENT ACTIVITY</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">ROOMS & SUITES</button>
+                    <button class="dropbutton">MANAGEMENT</button>
                     <div class="dropdown_contents">
-                        <a href="#rooms">ROOMS</a>
-                        <a href="#junior-suites">JUNIOR SUITES</a>
-                        <a href="#suites">SUITES</a>
-                        <a href="#diamond-suites">DIAMOND SUITES</a>
+                        <a href="#">RESERVATIONS</a>
+                        <a href="#">CUSTOMERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
+                    <button class="dropbutton">HELP</button>
                     <div class="dropdown_contents">
-                        <a href="#news">NEWS</a>
-                        <a href="#special-offers">SPECIAL OFFERS</a>
+                        <a href="#">HOW TO USE</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">PRACTICAL INFORMATION</button>
+                    <button class="dropbutton">ABOUT</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="#">WEBSITE</a>
+                        <a href="#">DEVELOPMENT</a>
+                        <a href="#">CONTACT</a>
                     </div>
                 </div>
             </div>
@@ -77,12 +82,15 @@
         
         <div id="content_con_login">
             <div id="content_login">
-                <div id="managetext">Hotel Management</div>    
-                <div id="managetext">
-                    <a href="#">Manage Customers</a>
-                    <a href="#">Manage Reservations</a>
-                    <a href="manage-users.php">Manage Users</a>
-                </div>    
+                <div id="managetext">Recent Activity</div>    
+                <table class="dashmenu" align="center">
+                    <tr height="50px">
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Customer Name</th>
+                        <th>Operation</th>
+                    </tr>
+                </table>
             </div>
             <div id="footer">
                 BBhotel &copy 2017

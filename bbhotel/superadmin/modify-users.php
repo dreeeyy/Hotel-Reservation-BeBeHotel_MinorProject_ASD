@@ -3,11 +3,21 @@
 <?php
     include ('../connection.php'); //connect the connection page
     if(empty($_SESSION)) // if the session not yet started     
-        session_start(); 
-    if(!isset($_SESSION['uname'])) 
-    { //if not yet logged in    
-        header("location: ../index.php");// send to login page    
-        exit; 
+        session_start();
+
+    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Admin')
+    { // if already login
+        header("location: ../admin/"); // send to home page   
+        exit;
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Customer')
+    { // if already login
+        header("location: ../customer/"); // send to home page   
+        exit;
+    }
+    else if($_SESSION['user_type']==NULL){
+        header("location: ../"); // send to home page   
+        exit;
     }
 
     if(isset($_GET['edit_id']))
@@ -62,7 +72,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="../css/add_users2.css">
+        <link rel="stylesheet" href="../css/superadmin-modify-users.css">
         <link rel="shortcut icon" href="../images/head_logo.png" />
     </head>
     <title>Add Users</title>
@@ -87,35 +97,32 @@
             </div>
             <div class="menu">
                 <div class="dropdown_content">
-                    <button class="dropbutton">DICOVER THE HOTEL</button>
+                    <button class="dropbutton">DASHBOARD</button>
                     <div class="dropdown_contents">
-                        <a href="#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="#hotel-services">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="index.php">RECENT ACTIVITY</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">ROOMS & SUITES</button>
+                    <button class="dropbutton">MANAGEMENT</button>
                     <div class="dropdown_contents">
-                        <a href="#rooms">ROOMS</a>
-                        <a href="#junior-suites">JUNIOR SUITES</a>
-                        <a href="#suites">SUITES</a>
-                        <a href="#diamond-suites">DIAMOND SUITES</a>
+                        <a href="#">ROOMS</a>
+                        <a href="manage-users.php">USERS</a>
+                        <a href="#">BOOKINGS</a>
+                        <a href="manage-customers.php">CUSTOMERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
+                    <button class="dropbutton">HELP</button>
                     <div class="dropdown_contents">
-                        <a href="#news">NEWS</a>
-                        <a href="#special-offers">SPECIAL OFFERS</a>
+                        <a href="#">HOW TO USE</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">PRACTICAL INFORMATION</button>
+                    <button class="dropbutton">ABOUT</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="#">WEBSITE</a>
+                        <a href="#">DEVELOPMENT</a>
+                        <a href="#">CONTACT</a>
                     </div>
                 </div>
             </div>
@@ -169,15 +176,42 @@
                             <input type="text" placeholder="Enter Address" name="address" value="<?php echo $fetched_row['address']; ?>" required>
                         </span>
                         <span class="gender">
-                            <b>Gender:</b> <br>
-                            <input type="radio" name="gender" value="Female"    >Female <br>
-                            <input type="radio" name="gender" value="Male">Male <br><br>
+                            <b>Gender</b> <br>
+                            <?php
+                                if ($fetched_row['gender'] == 'Female')
+                                {
+                                    echo "<input type='radio' name='gender' value='Female' checked>Female <br>";
+                                    echo "<input type='radio' name='gender' value='Male'>Male <br><br>";
+                                }
+                                else
+                                {
+                                    echo "<input type='radio' name='gender' value='Female'>Female <br>";
+                                    echo "<input type='radio' name='gender' value='Male' checked>Male <br><br>";
+                                }
+                            ?>
                         </span>
                         <span class="usertype">
-                            <b>User Type:</b> <br>
-                            <input type="radio" name="user_type" value="Super Admin" required>Super Admin <br>
-                            <input type="radio" name="user_type" value="Admin" required>Admin <br>
-                            <input type="radio" name="user_type" value="Customer" required>Customer <br><br>
+                            <b>Gender</b> <br>
+                            <?php
+                                if ($fetched_row['user_type'] == 'Super Admin')
+                                {
+                                    echo "<input type='radio' name='user_type' value='Super Admin' checked>Super Admin <br>";
+                                    echo "<input type='radio' name='user_type' value='Admin'>Admin <br>";
+                                    echo "<input type='radio' name='user_type' value='Customer'>Customer <br><br>";
+                                }
+                                if ($fetched_row['user_type'] == 'Admin')
+                                {
+                                    echo "<input type='radio' name='user_type' value='Super Admin'>Super Admin <br>";
+                                    echo "<input type='radio' name='user_type' value='Admin' checked>Admin <br>";
+                                    echo "<input type='radio' name='user_type' value='Customer'>Customer <br><br>";
+                                }
+                                else
+                                {
+                                    echo "<input type='radio' name='user_type' value='Super Admin'>Super Admin <br>";
+                                    echo "<input type='radio' name='user_type' value='Admin'>Admin <br>";
+                                    echo "<input type='radio' name='user_type' value='Customer' checked>Customer <br><br>";
+                                }
+                            ?>
                         </span>
                         <button class="signup_button" type="submit" name="updatebtn">Update</button>
                         <button class="signup_button2" type="submit" name="cancelbtn">Cancel</button>

@@ -4,11 +4,22 @@
     include 'connection.php'; //connect the connection page 
     if(empty($_SESSION)) // if the session not yet started     
         session_start(); 
-    if(isset($_SESSION['uname']))
+
+    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
     { // if already login
-        header("location: users.php"); // send to home page   
+        header("location: superadmin/"); // send to home page   
         exit;
-    } 
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
+    { // if already login
+        header("location: admin/"); // send to home page   
+        exit;
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Customer')
+    { // if already login
+        header("location: customer/"); // send to home page   
+        exit;
+    }
 ?>
 
 <html>
@@ -216,7 +227,7 @@
             </div>
             <div class="menu">
                 <div class="dropdown_content">
-                    <button class="dropbutton">DICOVER THE HOTEL</button>
+                    <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
                         <a href="#virtual-tour">VIRTUAL TOUR</a>
                         <a href="#hotel-services">HOTEL SERVICES</a>
@@ -285,7 +296,6 @@
 
                 <div class="login_container2" style="background-color:#f1f1f1">
                     <button type="button" onclick="document.getElementById('login_pop').style.display='none'" class="cancel_button">Cancel</button>
-                    
                 </div>
             </form>
         </div>

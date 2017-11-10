@@ -4,11 +4,59 @@
     include 'connection.php'; //connect the connection page 
     if(empty($_SESSION)) // if the session not yet started     
         session_start(); 
-    if(isset($_SESSION['uname']))
+    
+    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
     { // if already login
-        header("location: index.php"); // send to home page   
+        header("location: superadmin/"); // send to home page   
         exit;
-    } 
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
+    { // if already login
+        header("location: admin/"); // send to home page   
+        exit;
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Customer')
+    { // if already login
+        header("location: customer/"); // send to home page   
+        exit;
+    }
+
+    if(isset($_POST['signupbtn']))
+    {
+        // variables for input data
+        $uname = $_POST['uname'];
+        $pword = $_POST['pword'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $mnumber = $_POST['mnumber'];
+        $address = $_POST['address'];
+        $gender = $_POST['gender'];
+        $user_type = $_POST['user_type'];
+        // variables for input data
+
+        // sql query for inserting data into database
+        $sql_query = "INSERT INTO users (uname,pword,fname,lname,mnumber,address,gender,user_type) VALUES ('$uname','$pword','$fname','$lname','$mnumber','$address','$gender','$user_type')";
+        // sql query for inserting data into database
+
+        // sql query execution function
+        if(mysqli_query($con,$sql_query))
+        {
+            ?>
+            <script type="text/javascript">
+            alert('Data Are Inserted Successfully ');
+            window.location.href='index.php';
+            </script>
+            <?php
+        }
+        else
+        {
+            ?>
+            <script type="text/javascript">
+            alert('error occured while inserting your data');
+            </script>
+            <?php
+        }
+    }
 ?>
 
 <html>
@@ -215,7 +263,7 @@
             </div>
             <div class="menu">
                 <div class="dropdown_content">
-                    <button class="dropbutton">DICOVER THE HOTEL</button>
+                    <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
                         <a href="#virtual-tour">VIRTUAL TOUR</a>
                         <a href="#hotel-services">HOTEL SERVICES</a>
@@ -301,7 +349,7 @@
         
         <div id="content_con_login">
         <div id="content_login">
-            <form>
+            <form method="post">
                 <div class="signup_text">BBhotel | Sign Up</div>
                 <div class="signup_con">
                     <span class="uname">
@@ -343,7 +391,7 @@
                         <input type="radio" name="user_type" value="Admin" disabled>Admin <br>
                         <input type="radio" name="user_type" value="Customer" required>Customer <br><br>
                     </span>
-                    <button class="signup_button" type="submit" name="submit">Sign Up</button>
+                    <button class="signup_button" type="submit" name="signupbtn">Sign Up</button>
                 </div>
             </form>
         </div>

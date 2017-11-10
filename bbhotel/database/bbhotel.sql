@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uname` varchar(16) DEFAULT NULL,
+  `uname` varchar(10) DEFAULT NULL,
   `pword` varchar(32) DEFAULT NULL,
   `fname` varchar(32) DEFAULT NULL,
   `lname` varchar(32) DEFAULT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `users` (
   `gender` set('Female','Male') DEFAULT NULL,
   `user_type` set('Super Admin','Admin','Customer') DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'superadmin','superadmin','Super','Admin','',NULL,NULL,'Super Admin'),(7,'pinky','pinky','Pinky','Corpin','09876543210','Marawi','Female','Admin'),(8,'auds','auds','Audrey','Taghoy','09876543213','Bukid','Female','Admin'),(9,'Dannah','dannah','Diniris','Eutjonsnu','456789','winterfell','Female','Super Admin');
+INSERT INTO `users` VALUES (1,'superadmin','superadmin','Super','Admin','',NULL,NULL,'Super Admin'),(10,'rolleenao','rolleenao-07','Rolly','Linao','09876543212','Davao City','Male','Admin'),(12,'dannah','dannah','Dannah','Sanda','09876543212','Marawi','Female','Customer'),(13,'audrey','audrey','Audrey','Taghoy','0987654314','Indangan','Female','Customer');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-09 15:33:05
+-- Dump completed on 2017-11-10 12:22:30
