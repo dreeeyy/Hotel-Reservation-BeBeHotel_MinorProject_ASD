@@ -1,4 +1,5 @@
 <?php
+    include ('connection.php');
 	if(empty($_SESSION)) // if the session not yet started     
         session_start(); 
     if(!isset($_POST['submit']))
@@ -7,22 +8,27 @@
         exit;  
     } 
 
-	$l=mysqli_connect("localhost","root","",'bbhotel');
+	$uname=$_POST['uname'];
+	$pword=$_POST['pword'];
+    $user_type=$_POST['user_type'];
+	$q="select * from users where user_type='$user_type' and uname='$uname' and pword='$pword'";
+	$res=mysqli_query($con, $q);
 
-	$username=$_POST['username'];
-	$password=$_POST['password'];
-    $type=$_POST['type'];
-	$q="select * from users where type='$type' and username='$username' and password='$password'";
-	$res=mysqli_query($l, $q);
 	if(mysqli_num_rows($res)>0)
 	{
-        $_SESSION['username']=$username;
-        if($type=='Super Admin'){
-            echo "<script>window.location='superadmin.php';</script>";
-        }else if($type=='Admin'){
-            echo "<script>window.location='admin.php';</script>";
+        while($row=mysqli_fetch_row($res)){
+            $_SESSION['id']=$row[0];
+            $_SESSION['fname']=$row[3];
+            $_SESSION['lname']=$row[4];
+        }
+        $_SESSION['uname']=$uname;
+        $_SESSION['user_type']=$user_type;
+        if($user_type=='Super Admin'){
+            echo "<script>window.location='superadmin/';</script>";
+        }else if($user_type=='Admin'){
+            echo "<script>window.location='admin/';</script>";
         }else{
-            echo "<script>window.location='users.php';</script>";
+            echo "<script>window.location='customer';</script>";
         }
 	}
 	else

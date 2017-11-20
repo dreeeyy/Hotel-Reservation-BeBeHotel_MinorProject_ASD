@@ -1,0 +1,281 @@
+body {
+    margin: auto;
+    background-color: gray;
+}
+
+.navbar {
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    background-color: darkgoldenrod;
+    font-family: Arial;
+    z-index: 1;
+}
+
+.menu   {
+    position: absolute;
+    top: 0px;
+    left: 100px;
+}
+
+.navbar a {
+    float: left;
+    font-size: 11px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    top: 2px;
+}
+
+.dropdown_content {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown_content .dropbutton {
+    font-size: 11px;    
+    border: none;
+    outline: none;
+    color: white;
+    width: 150px;
+    height: 40px;
+    background-color: inherit;
+}
+
+.dropdown_content:hover .dropbutton {
+    background-color: goldenrod;
+}
+
+.dropdown_contents {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.dropdown_contents a {
+    float: none;
+    color: black;
+    padding: 14px 0px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown_contents a:hover {
+    background-color: #ddd;
+}
+
+.dropdown_content:hover .dropdown_contents {
+    display: block;
+}
+
+/*User*/
+.content_account_user {
+    float: right;
+    overflow: hidden;
+}
+
+.content_account_user .account_user {
+    font-size: 11px;    
+    border: none;
+    outline: none;
+    color: white;
+    width: 150px;
+    height: 40px;
+    background-color: goldenrod;
+}
+
+.contents_account_user {
+    display: none;
+    position: absolute;
+    right: 0px;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.contents_account_user a {
+    float: none;
+    color: black;
+    padding: 14px 0px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.contents_account_user a:hover {
+    background-color: #ddd;
+}
+
+.content_account_user:hover .contents_account_user {
+    display: block;
+}
+
+/*Content*/
+#content_con_login {
+	position: relative;
+	margin: auto;
+	width: 1300px;
+	box-shadow: 0px 2px 5px black;
+}
+
+#content_login {
+	position: relative;
+	width: 1300px;
+    height: 655px;
+	background-color: white;
+    font-family: Arial;
+    z-index: -1;
+}
+
+/*Footer*/
+#footer {
+	position: relative;
+	bottom: 0;
+	margin: auto;
+	height: 26px;
+	width: 1300px;
+	background-color: darkgoldenrod;
+	text-align: center;
+	padding-top: 14px;
+	font-size: 12px;
+	color: white;
+	font-family: Arial;
+}
+
+.welcome {
+    position: absolute;
+    font-family: Arial;
+    top: 125px;
+    left: 475px;
+    text-shadow: 1px 1px 2px black;
+    font-size: 50px;
+    color: goldenrod;
+}
+
+.Bebe {
+    position: absolute;
+    top: 175px;
+    left: 190px;
+    font-size: 350px;
+    color: goldenrod;
+    text-shadow: 1px 1px 2px black;
+    font-family: slidefont;
+    width: 1300px;
+    z-index: 0;
+}
+
+@font-face {
+    font-family: slidefont;
+    src: url('../fonts/Sensations-and-Qualities.ttf');
+}
+
+#take-tour {
+    font-family: Arial;
+    position: absolute;
+    border-radius: 10px;
+    height: 20px;
+    width: 150px;
+    top: 535px;
+    left: 580px;
+    z-index: 0;
+    padding: 20px 0px;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 1px 2px black;
+    background: rgb(184,134,11);
+}
+
+#take-tour:hover {
+    background: rgb(218,165,32);
+}
+
+/*SLider*/
+.slider{
+    overflow: hidden;
+    height: 100%;
+}
+
+.slider figure div {
+    width: 20%;
+    float: left;  
+}
+
+.slider figure img {
+    width: 100%;
+    float: left;
+}
+
+.slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slidy infinite;
+}
+
+@keyframes slidy {
+    0%{
+        left: 0%;
+    }
+
+    10%{
+        left: 0%
+    }
+    12%{
+        left: -100%;
+    }
+
+    22%{
+        left: -100%;
+    }
+
+    24%{
+        left: -200%;
+    }
+    34%{
+        left: -200%;
+    }
+    36%{
+        left: -300%;
+    }
+    46%{
+        left: -300%;
+    }
+    48%{
+        left: -400%;
+    }
+    58%{
+        left: -400%;
+    }
+    60%{
+        left: -300%;
+    }
+    70%{
+        left: -300%;
+    }
+    72%{
+        left: -200%;
+    }
+    82%{
+        left: -200%;
+    }
+    84%{
+        left: -100%;
+    }
+    94%{
+        left: -100%;
+    }
+    96%{
+        left: 0%;
+    }
+}
