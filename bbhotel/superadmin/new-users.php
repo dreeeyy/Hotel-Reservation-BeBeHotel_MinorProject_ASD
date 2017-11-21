@@ -95,19 +95,52 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">MANAGEMENT</button>
                     <div class="dropdown_contents">
+<<<<<<< HEAD
                         <a href="manage-rooms.php">ROOMS</a>
                         <a href="manage-users.php">USERS</a>
                         <a href="manage-customers.php">CUSTOMERS</a>
                         <a href="manage-reservations.php">RESERVATIONS</a>
+=======
+                        <a href="#">ROOMS</a>
+                        <a href="manage-users.php">USERS</a>
+                        <a href="#">BOOKINGS</a>
+                        <a href="manage-customers.php">CUSTOMERS</a>
+                    </div>
+                </div>
+                <div class="dropdown_content">
+                    <button class="dropbutton">HELP</button>
+                    <div class="dropdown_contents">
+                        <a href="#">HOW TO USE</a>
+                    </div>
+                </div>
+                <div class="dropdown_content">
+                    <button class="dropbutton">ABOUT</button>
+                    <div class="dropdown_contents">
+                        <a href="#">WEBSITE</a>
+                        <a href="#">DEVELOPMENT</a>
+                        <a href="#">CONTACT</a>
+>>>>>>> master
                     </div>
                 </div>
             </div>
             
             <div class="content_account_user">
+<<<<<<< HEAD
                 <button class="account_user" >MY ACCOUNT</button>
                     
                 <div class="contents_account_user">
                     <a href="superadmin-profile.php">PROFILE</a>
+=======
+                <button class="account_user" >
+                    <?php
+                        echo $_SESSION['uname'];
+                    ?>
+                </button>
+                    
+                <div class="contents_account_user">
+                    <a href="#">PROFILE</a>
+                    <a href="#">SETTINGS</a>
+>>>>>>> master
                     <a href="../logout.php">LOG OUT</a>
                 </div>
             </div>
@@ -154,6 +187,10 @@
                         <span class="usertype">
                             <b>User Type</b> <br>
                             <input type="radio" name="user_type" value="Super Admin" required>Super Admin <br>
+<<<<<<< HEAD
+=======
+                            <input type="radio" name="user_type" value="Admin" required>Admin <br>
+>>>>>>> master
                             <input type="radio" name="user_type" value="Customer" required>Customer <br><br>
                         </span>
                         <button class="add_button" type="submit" name="addbtn">Add</button>

@@ -125,6 +125,10 @@ body {
 #content_con_login {
 	position: relative;
 	margin: auto;
+<<<<<<< HEAD
+=======
+	height: 690px;
+>>>>>>> master
 	width: 1300px;
 	box-shadow: 0px 2px 5px black;
 }
@@ -132,10 +136,16 @@ body {
 #content_login {
 	position: relative;
 	width: 1300px;
+<<<<<<< HEAD
     height: 675px;
 	background-color: white;
     font-family: Arial;
     z-index: -1;
+=======
+    height: 650px;
+	background-color: white;
+    font-family: Arial;
+>>>>>>> master
 }
 
 /*Footer*/
@@ -153,6 +163,7 @@ body {
 	font-family: Arial;
 }
 
+<<<<<<< HEAD
 .welcome {
     position: absolute;
     font-family: Arial;
@@ -350,6 +361,8 @@ body {
     background: rgb(218,165,32);
 }
 
+=======
+>>>>>>> master
 
 /*SLider*/
 .slider{
@@ -430,6 +443,7 @@ body {
     96%{
         left: 0%;
     }
+<<<<<<< HEAD
 }
 
 .vslider{
@@ -510,4 +524,6 @@ body {
     96%{
         left: 0%;
     }
+=======
+>>>>>>> master
 }

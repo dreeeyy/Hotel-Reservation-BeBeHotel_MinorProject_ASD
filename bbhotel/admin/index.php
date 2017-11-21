@@ -5,9 +5,9 @@
     if(empty($_SESSION))    
          session_start();
 
-    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Admin')
+    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
     { // if already login
-        header("location: ../admin/"); // send to home page   
+        header("location: ../superadmin/"); // send to home page   
         exit;
     }
     else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Customer')
@@ -23,14 +23,10 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="../css/superadmin-index.css">
+        <link rel="stylesheet" href="../css/admin-index.css">
         <link rel="shortcut icon" href="../images/head_logo.png" />
     </head>
-<<<<<<< HEAD
-    <title>Manage Customers</title>
-=======
     <title>Recent Activity</title>
->>>>>>> master
     
     <body>
         <div class="navbar">
@@ -49,16 +45,8 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">MANAGEMENT</button>
                     <div class="dropdown_contents">
-<<<<<<< HEAD
-                        <a href="manage-rooms.php">ROOMS</a>
-                        <a href="manage-users.php">USERS</a>
-                        <a href="manage-customers.php">CUSTOMERS</a>
-                        <a href="manage-reservations.php">RESERVATIONS</a>
-=======
-                        <a href="#">ROOMS</a>
-                        <a href="manage-users.php">USERS</a>
-                        <a href="#">BOOKINGS</a>
-                        <a href="manage-customers.php">CUSTOMERS</a>
+                        <a href="#">RESERVATIONS</a>
+                        <a href="#">CUSTOMERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
@@ -73,18 +61,11 @@
                         <a href="#">WEBSITE</a>
                         <a href="#">DEVELOPMENT</a>
                         <a href="#">CONTACT</a>
->>>>>>> master
                     </div>
                 </div>
             </div>
             
             <div class="content_account_user">
-<<<<<<< HEAD
-                <button class="account_user" >MY ACCOUNT</button>
-                    
-                <div class="contents_account_user">
-                    <a href="superadmin-profile.php">PROFILE</a>
-=======
                 <button class="account_user" >
                     <?php
                         echo $_SESSION['uname'];
@@ -94,7 +75,6 @@
                 <div class="contents_account_user">
                     <a href="#">PROFILE</a>
                     <a href="#">SETTINGS</a>
->>>>>>> master
                     <a href="../logout.php">LOG OUT</a>
                 </div>
             </div>
@@ -105,45 +85,11 @@
                 <div id="managetext">Recent Activity</div>    
                 <table class="dashmenu" align="center">
                     <tr height="50px">
-<<<<<<< HEAD
-                        <th>ID</th>
-                        <th>Fullname</th>
-                        <th>User Type</th>
-                        <th>Operations</th>
-                        <th>Date</th>
-                    </tr>
-
-                <?php
-                 
-                 $sql_query="SELECT * FROM logs ORDER BY changedon DESC";
-                
-                    $result_set=mysqli_query($con,$sql_query);
-
-                    if(mysqli_num_rows($result_set)>0){
-
-                    while($row=mysqli_fetch_assoc($result_set))
-                    {
-                    ?>  
-
-                    <tr height="50px"> 
-                        <td align="center"><?php echo $row['id'];?></td>
-                        <td align="center"><?php echo $row['fname'] . " ". $row['lname'];?></td>
-                        <td align="center"><?php echo $row['user_type'];?></td>
-                        <td align="center"><?php echo $row['action'];?></td>
-                        <td align="center"><?php echo $row['changedon'];?></td>
-                    </tr>
-                        <?php
-                    }    
-                    }
-                ?>
-=======
                         <th>Date</th>
                         <th>Description</th>
-                        <th>Username</th>
-                        <th>User Type</th>
+                        <th>Customer Name</th>
                         <th>Operation</th>
                     </tr>
->>>>>>> master
                 </table>
             </div>
             <div id="footer">

@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.21-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.28-MariaDB, for Win32 (AMD64)
 --
--- Host: localhost    Database: localhost
+-- Host: localhost    Database: bbhotel
 -- ------------------------------------------------------
--- Server version	10.1.21-MariaDB
+-- Server version	10.1.28-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -142,7 +142,11 @@ CREATE TABLE `users` (
   `gender` set('Female','Male') DEFAULT NULL,
   `user_type` set('Super Admin','Admin','Customer') DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+>>>>>>> master
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +155,11 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+<<<<<<< HEAD
 INSERT INTO `users` VALUES (1,'superadmin','superadmin','Super','Admin','911','Island Garden City of Samal','Male','Super Admin'),(12,'dannah','dannah','Dannah Rose','Sanda','09876543212','Marawi','Female','Customer'),(16,'audrey','audrey','Audrey','Taghoy','09472847','Acacia','Female','Customer'),(17,'super','super','Pinky','Corpin','09234145','Lanao del Sur','Female','Super Admin'),(18,'pinky','corpinh','Pinky','Corpin','09378133821','Mandug, Davao City','Female','Customer');
+=======
+INSERT INTO `users` VALUES (1,'superadmin','superadmin','Super','Admin','',NULL,NULL,'Super Admin'),(10,'rolleenao','rolleenao-07','Rolly','Linao','09876543212','Davao City','Male','Admin'),(12,'dannah','dannah','Dannah','Sanda','09876543212','Marawi','Female','Customer'),(13,'audrey','audrey','Audrey','Taghoy','0987654314','Indangan','Female','Customer');
+>>>>>>> master
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -227,4 +235,8 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< HEAD
 -- Dump completed on 2017-11-21 18:52:53
+=======
+-- Dump completed on 2017-11-10 12:22:30
+>>>>>>> master

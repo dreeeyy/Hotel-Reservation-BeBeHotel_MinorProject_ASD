@@ -265,26 +265,50 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
+<<<<<<< HEAD
                         <a href="hotel-services.php">HOTEL SERVICES</a>
+=======
+                        <a href="#virtual-tour">VIRTUAL TOUR</a>
+                        <a href="#hotel-services">HOTEL SERVICES</a>
+                        <a href="#awards">AWARDS</a>
+>>>>>>> master
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">ROOMS & RESERVATIONS</button>
                     <div class="dropdown_contents">
+<<<<<<< HEAD
                         <a href="rooms.php">ROOMS</a>
                         <a href="reservation.php">RESERVATIONS</a>
+=======
+                        <a href="#rooms">ROOMS</a>
+                        <a href="#junior-suites">JUNIOR SUITES</a>
+                        <a href="#suites">SUITES</a>
+                        <a href="#diamond-suites">DIAMOND SUITES</a>
+>>>>>>> master
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
+<<<<<<< HEAD
                         <a href="special-offers.php">SPECIAL OFFERS</a>
+=======
+                        <a href="#news">NEWS</a>
+                        <a href="#special-offers">SPECIAL OFFERS</a>
+>>>>>>> master
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
+<<<<<<< HEAD
                         <a href="contact-us.php">CONTACT US</a>
+=======
+                        <a href="#practical-details">PRACTICAL DETAILS</a>
+                        <a href="#contact-us">CONTACT US</a>
+                        <a href="#gift-ideas">GIFT IDEAS</a>
+>>>>>>> master
                     </div>
                 </div>
             </div>
@@ -311,6 +335,10 @@
                     <span class="password"><a href="#">forgot your password?</a></span>
                     <span class="type">
                         <input type="radio" name="user_type" value="Super Admin" required>Super Admin &nbsp;
+<<<<<<< HEAD
+=======
+                        <input type="radio" name="user_type" value="Admin" required>Admin &nbsp;
+>>>>>>> master
                         <input type="radio" name="user_type" value="Customer" required>Customer
                     </span>
                     <button class="login_button" type="submit" name="submit" onClick="return fun_val();">Login</button>

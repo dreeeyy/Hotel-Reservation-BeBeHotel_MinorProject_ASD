@@ -84,7 +84,11 @@ body {
 }
 
 .content_account_user .account_user {
+<<<<<<< HEAD
     font-size: 11px;    
+=======
+    font-size: 12px;    
+>>>>>>> master
     border: none;
     outline: none;
     color: white;

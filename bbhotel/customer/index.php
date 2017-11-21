@@ -40,52 +40,54 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="hotel-services.php">HOTEL SERVICES</a>
+                        <a href="#virtual-tour">VIRTUAL TOUR</a>
+                        <a href="#hotel-services">HOTEL SERVICES</a>
+                        <a href="#awards">AWARDS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">ROOMS & RESERVATIONS</button>
+                    <button class="dropbutton">ROOMS & SUITES</button>
                     <div class="dropdown_contents">
-                        <a href="../customers-rooms.php">ROOMS</a>
-                        <a href="../reservation.php">RESERVATIONS</a>
+                        <a href="#rooms">ROOMS</a>
+                        <a href="#junior-suites">JUNIOR SUITES</a>
+                        <a href="#suites">SUITES</a>
+                        <a href="#diamond-suites">DIAMOND SUITES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="special-offers.php">SPECIAL OFFERS</a>
+                        <a href="#news">NEWS</a>
+                        <a href="#special-offers">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="contact-us.php">CONTACT US</a>
+                        <a href="#practical-details">PRACTICAL DETAILS</a>
+                        <a href="#contact-us">CONTACT US</a>
+                        <a href="#gift-ideas">GIFT IDEAS</a>
                     </div>
                 </div>
             </div>
             
             <div class="content_account_user">
-                <button class="account_user" >MY ACCOUNT</button>
+                <button class="account_user" >
+                    <?php
+                        echo $_SESSION['uname'];
+                    ?>
+                </button>
                     
                 <div class="contents_account_user">
-                    <a href="profile.php">PROFILE</a>
+                    <a href="#">PROFILE</a>
+                    <a href="#">SETTINGS</a>
+                    <a href="#">BOOKINGS</a>
                     <a href="../logout.php">LOG OUT</a>
                 </div>
             </div>
         </div>
         
         <div id="content_con_login">
-            <div class="welcome">
-                WELCOME TO
-            </div>
-            <div class="Bebe">
-                Bebe Hotel
-            </div>
-            <a href="lets-tour.php">
-                <div id="take-tour">
-                    Let's Tour
-                </div>
-            </a>
             <div id="content_login">
                 <div class="slider">
                     <figure>

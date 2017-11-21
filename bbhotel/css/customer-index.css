@@ -84,7 +84,11 @@ body {
 }
 
 .content_account_user .account_user {
+<<<<<<< HEAD
     font-size: 11px;    
+=======
+    font-size: 12px;    
+>>>>>>> master
     border: none;
     outline: none;
     color: white;
@@ -124,17 +128,28 @@ body {
 #content_con_login {
 	position: relative;
 	margin: auto;
+<<<<<<< HEAD
+=======
+    height: 690px;
+>>>>>>> master
 	width: 1300px;
 	box-shadow: 0px 2px 5px black;
 }
 
 #content_login {
 	position: relative;
+<<<<<<< HEAD
 	width: 1300px;
     height: 655px;
 	background-color: white;
     font-family: Arial;
     z-index: -1;
+=======
+	margin: auto;
+    height: 650px;
+	width: 1300px;
+	background-color: white;
+>>>>>>> master
 }
 
 /*Footer*/
@@ -152,6 +167,7 @@ body {
 	font-family: Arial;
 }
 
+<<<<<<< HEAD
 .welcome {
     position: absolute;
     font-family: Arial;
@@ -199,6 +215,8 @@ body {
     background: rgb(218,165,32);
 }
 
+=======
+>>>>>>> master
 /*SLider*/
 .slider{
     overflow: hidden;

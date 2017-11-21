@@ -16,11 +16,14 @@
 
 	if(mysqli_num_rows($res)>0)
 	{
+<<<<<<< HEAD
         while($row=mysqli_fetch_row($res)){
             $_SESSION['id']=$row[0];
             $_SESSION['fname']=$row[3];
             $_SESSION['lname']=$row[4];
         }
+=======
+>>>>>>> master
         $_SESSION['uname']=$uname;
         $_SESSION['user_type']=$user_type;
         if($user_type=='Super Admin'){

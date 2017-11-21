@@ -30,7 +30,6 @@
         <link rel="shortcut icon" href="images/head_logo.png" />
         <link rel="stylesheet" href="css/magnific-popup.css">
         <script src="js/modernizr.js"></script>
-        <script src="scripts/Slideshow.js"></script>
     </head>
     <title>BBhotel</title>
     
@@ -311,7 +310,7 @@
             <div class="welcome">
                 Rooms
             </div>
-            <a href="#portfolio">
+            <a class ="smoothscroll" href="#portfolio">
                 <div id="take-tour">
                     View Rooms
                 </div>
