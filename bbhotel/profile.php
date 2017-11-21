@@ -40,33 +40,26 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="#hotel-services">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="hotel-services.php">HOTEL SERVICES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">ROOMS & SUITES</button>
+                    <button class="dropbutton">ROOMS & RESERVATION</button>
                     <div class="dropdown_contents">
-                        <a href="#rooms">ROOMS</a>
-                        <a href="#junior-suites">JUNIOR SUITES</a>
-                        <a href="#suites">SUITES</a>
-                        <a href="#diamond-suites">DIAMOND SUITES</a>
+                        <a href="rooms.php">ROOMS</a>
+                        <a href="reservation.php">RESERVATION</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="#news">NEWS</a>
-                        <a href="#special-offers">SPECIAL OFFERS</a>
+                        <a href="special-offers.PHP">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>
@@ -79,9 +72,7 @@
                 </button>
                     
                 <div class="contents_account_user">
-                    <a href="customer/profile.php">PROFILE</a>
-                    <a href="#">SETTINGS</a>
-                    <a href="#">TRANSACTION</a>
+                    <a href="#">PROFILE</a>
                     <a href="../logout.php">LOG OUT</a>
                 </div>
             </div>
@@ -90,27 +81,38 @@
             <div id="content_login">
                 <div class="content_profile">
                 <div class="profPic">
+                    <img src="../images/profile/profile.jpg" class="pic" width="195px" height="180px">
                      <div class = "prof_table"> 
                         <div class="basicInfo">
                         <?php
                  
-                            $sql_query="SELECT room_id, customer FROM reservations WHERE uname ='".$_SESSION['uname']."'";
+                            $sql_query="SELECT fname,lname,mnumber,address,gender FROM users WHERE uname ='".$_SESSION['uname']."'";
                 
                             $result_set=mysqli_query($con,$sql_query);
+
+                            if(mysqli_num_rows($result_set)>0){
 
                             while($row=mysqli_fetch_assoc($result_set))
                             {
                             ?>
                             <table>
-                                <tr height="50px">
-                                    <td>Address: <?php echo $row['room_id'];?></td>
+                                <th><c>BASIC INFORMATION</c></th>
+                                <tr height="40px">
+                                    <td>Name: <?php echo $row['fname'] ." " . $row['lname'];?></td>
                                 </tr>
-                                <tr height="50px">
-                                    <td>Gender: <?php echo $row['customer'];?></td>
+                                <tr height="40px">
+                                    <td>Number: <?php echo $row['mnumber'];?></td>
+                                </tr>
+                                <tr height="40px">
+                                    <td>Address: <?php echo $row['address'];?></td>
+                                </tr>
+                                <tr height="40px">
+                                    <td>Gender: <?php echo $row['gender'];?></td>
                                 </tr>
                             </table>
                             <?php
                             }    
+                            }   
                         ?>
                         </div>
                     </div>

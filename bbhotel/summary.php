@@ -54,44 +54,38 @@
                     <img src="images/logo.png" width="75px;">
                 </a>
             </div>
-            <div class="menu">
+           <div class="menu">
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
                         <a href="hotel-services.php">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">ROOMS & RESERVATIONS</button>
                     <div class="dropdown_contents">
-                        <a href="customers-rooms.php">ROOMS</a>
+                        <a href="rooms.php">ROOMS</a>
                         <a href="reservation.php">RESERVATIONS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="news.php">NEWS</a>
                         <a href="special-offers.php">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>
-            
             <div class="content_account_user">
                 <button class="account_user" >MY ACCOUNT</button>
                     
                 <div class="contents_account_user">
                     <a href="customer/profile.php">PROFILE</a>
-                    <a href="#">TRANSACTIONS</a>
                     <a href="logout.php">LOG OUT</a>
                 </div>
             </div>

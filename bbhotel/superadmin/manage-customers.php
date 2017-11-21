@@ -36,10 +36,7 @@
         <script type="text/javascript">
             function view_id(id)
             {
-                if(confirm('Are you sure you want to modify the data?'))
-                {
-                    window.location.href='viewUsers.php?view_id='+id;
-                }
+                window.location.href='viewUsers.php?view_id='+id;
             }
             function edt_id(id)
             {

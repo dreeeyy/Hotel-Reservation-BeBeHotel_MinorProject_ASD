@@ -31,6 +31,14 @@
         <link rel="stylesheet" href="css/magnific-popup.css">
         <script src="js/modernizr.js"></script>
         <script src="scripts/Slideshow.js"></script>
+        
+        <script type="text/javascript">
+            function res_room(id)
+            {
+                window.location.href='reservation.php?res_room='+id;
+            }
+        </script>
+        
     </head>
     <title>BBhotel</title>
 
@@ -46,30 +54,26 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="hotel-services.php">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="customer/hotel-services.php">HOTEL SERVICES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">ROOMS & RESERVATIONS</button>
                     <div class="dropdown_contents">
-                        <a href="rooms.php">ROOMS</a>
+                        <a href="customers-rooms.php">ROOMS</a>
                         <a href="reservation.php">RESERVATIONS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="news.php">NEWS</a>
-                        <a href="special-offers.php">SPECIAL OFFERS</a>
+                        <a href="customer/special-offers.php">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="customer/contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>
@@ -78,7 +82,6 @@
                 <button class="account_user" >MY ACCOUNT</button>
                 <div class="contents_account_user">
                     <a href="customer/profile.php">PROFILE</a>
-                    <a href="#">TRANSACTIONS</a>
                     <a href="logout.php">LOG OUT</a>
                 </div>
             </div>
@@ -267,7 +270,7 @@
                             <h2>Price: Php 6,300.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('1')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-01 End -->
@@ -299,7 +302,7 @@
                             <h2>Price: Php 6,600.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('2')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-03 End -->
@@ -331,7 +334,7 @@
                             <h2>Price: Php 4,200.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('5')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-02 End -->
@@ -363,7 +366,7 @@
                             <h2>Price: Php 4,400.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('6')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-04 End -->
@@ -395,7 +398,7 @@
                             <h2>Price: Php 2,100.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('7')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-07 End -->
@@ -427,7 +430,7 @@
                             <h2>Price: Php 2,500.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('8')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-06 End -->
@@ -459,7 +462,7 @@
                             <h2>Price: Php 5,500.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('3')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-07 End -->            
@@ -491,7 +494,7 @@
                             <h2>Price: Php 5,900.00 per night</h2>
                         </div>
                         <div class="link-box">
-                            <a href="reservation.php" >Reserve Now</a>
+                            <a href="javascript:res_room('4')">Reserve Now</a>
                             <a class="popup-modal-dismiss" style="margin-left: 338.4px;">Close</a>
                         </div>
                     </div><!-- modal-05 End -->

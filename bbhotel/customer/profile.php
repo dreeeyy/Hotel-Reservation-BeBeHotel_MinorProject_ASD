@@ -40,13 +40,11 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="#hotel-services">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="hotel-services.php">HOTEL SERVICES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">ROOMS & SUITES</button>
+                    <button class="dropbutton">ROOMS & RESERVATIONS</button>
                     <div class="dropdown_contents">
                         <a href="../customers-rooms.php">ROOMS</a>
                         <a href="../reservation.php">RESERVATIONS</a>
@@ -55,16 +53,13 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="#news">NEWS</a>
-                        <a href="#special-offers">SPECIAL OFFERS</a>
+                        <a href="special-offers.php">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>

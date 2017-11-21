@@ -235,7 +235,6 @@
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
                         <a href="hotel-services.php">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
@@ -248,16 +247,13 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="news.php">NEWS</a>
                         <a href="special-offers.php">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>
@@ -284,7 +280,6 @@
                     <span class="password"><a href="#">forgot your password?</a></span>
                     <span class="type">
                         <input type="radio" name="user_type" value="Super Admin" required>Super Admin &nbsp;
-                        <input type="radio" name="user_type" value="Admin" required>Admin &nbsp;
                         <input type="radio" name="user_type" value="Customer" required>Customer
                     </span>
                     <button class="login_button" type="submit" name="submit" onClick="return fun_val();">Login</button>

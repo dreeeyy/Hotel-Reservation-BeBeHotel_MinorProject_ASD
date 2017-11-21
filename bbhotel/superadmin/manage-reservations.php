@@ -92,15 +92,14 @@
                 <div id="managetext">Manage Reservations</div>
                 <table align="center">
                     <tr height="50px">
-                        <th>ID</th>
-                        <th>Room ID</th>
-                        <th>Customer ID</th>
+                        <th>Fullname</th>
+                        <th>Room</th>
                         <th>Check In</th>
                         <th>Check Out</th>
                         <th colspan="2">Operations</th>
                     </tr>
                     <?php
-                        $sql_query="SELECT id,room_id,customer,check_in,check_out from reservations";
+                        $sql_query="SELECT a.fname,a.lname,b.room_type,c.check_in,c.check_out from users a inner join reservations c on a.id=c.customer inner join rooms b on b.id=c.room_id";
                         $result_set=mysqli_query($con,$sql_query);
                         if(mysqli_num_rows($result_set)>0)
                         {
@@ -108,8 +107,7 @@
                             {
                             ?>
                             <tr height="50px">
-                                <td align="center"><?php echo $row[0];?></td>
-                                <td align="center"><?php echo $row[1];?></td>
+                                <td align="center"><?php echo $row[0]." ".$row[1];?></td>
                                 <td align="center"><?php echo $row[2];?></td>
                                 <td align="center"><?php echo $row[3];?></td>
                                 <td align="center"><?php echo $row[4];?></td>

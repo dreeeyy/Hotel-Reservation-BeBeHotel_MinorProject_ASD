@@ -88,8 +88,7 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="hotel-services.php">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="customer/hotel-services.php">HOTEL SERVICES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
@@ -102,16 +101,13 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="news.php">NEWS</a>
-                        <a href="special-offers.php">SPECIAL OFFERS</a>
+                        <a href="customer/special-offers.php">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="customer/contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>
@@ -121,7 +117,6 @@
                     
                 <div class="contents_account_user">
                     <a href="customer/profile.php">PROFILE</a>
-                    <a href="#">TRANSACTIONS</a>
                     <a href="logout.php">LOG OUT</a>
                 </div>
             </div>
@@ -149,7 +144,14 @@
                                 {
                                     while($row=mysqli_fetch_row($result_set))
                                     {   
-                                        echo "<input type='radio' name='room_id' value='$row[0]' required>".$row[1]." <b>[".$row[3]." rooms left]</b>";
+                                        if(isset($_GET['res_room'])&&$_GET['res_room']==$row[0]){
+                                            echo "<input type='radio' name='room_id' value='$row[0]' checked required>".$row[1]." <b>[".$row[3]." rooms left]</b>";
+                                        }
+                                        else if(isset($_GET['res_room'])&&$_GET['res_room']!=$row[0]){
+                                            echo "<input type='radio' name='room_id' value='$row[0]' required>".$row[1]." <b>[".$row[3]." rooms left]</b>";
+                                        }else{
+                                            echo "<input type='radio' name='room_id' value='$row[0]' required>".$row[1]." <b>[".$row[3]." rooms left]</b>";
+                                        }
                                         echo "<br>";
                                     ?>
                                     <?php

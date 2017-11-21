@@ -40,8 +40,7 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href=".../hotel-services.php">HOTEL SERVICES</a>
-                        <a href="#awards">AWARDS</a>
+                        <a href="hotel-services.php">HOTEL SERVICES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
@@ -54,16 +53,13 @@
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="../news.php">NEWS</a>
-                        <a href="../special-offers.php">SPECIAL OFFERS</a>
+                        <a href="special-offers.php">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="#practical-details">PRACTICAL DETAILS</a>
-                        <a href="#contact-us">CONTACT US</a>
-                        <a href="#gift-ideas">GIFT IDEAS</a>
+                        <a href="contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +69,6 @@
                     
                 <div class="contents_account_user">
                     <a href="profile.php">PROFILE</a>
-                    <a href="transaction.php">TRANSACTIONS</a>
                     <a href="../logout.php">LOG OUT</a>
                 </div>
             </div>
@@ -86,7 +81,7 @@
             <div class="Bebe">
                 Bebe Hotel
             </div>
-            <a href="#">
+            <a href="lets-tour.php">
                 <div id="take-tour">
                     Let's Tour
                 </div>

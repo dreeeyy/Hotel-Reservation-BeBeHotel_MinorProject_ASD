@@ -154,7 +154,6 @@
                         <span class="usertype">
                             <b>User Type</b> <br>
                             <input type="radio" name="user_type" value="Super Admin" required>Super Admin <br>
-                            <input type="radio" name="user_type" value="Admin" required>Admin <br>
                             <input type="radio" name="user_type" value="Customer" required>Customer <br><br>
                         </span>
                         <button class="add_button" type="submit" name="addbtn">Add</button>

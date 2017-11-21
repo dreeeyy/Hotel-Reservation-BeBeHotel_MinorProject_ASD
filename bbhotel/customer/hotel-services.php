@@ -1,46 +1,34 @@
 <!DOCTYPE html>
 
-<?php 
-    include ('connection.php'); //connect the connection page 
-    if(isset($_POST['submit']))
-    {
-        // variables for input data
-     $username = $_POST['username'];
-     $password = $_POST['password'];
-     $fname = $_POST['fname'];
-     $lname = $_POST['lname'];
-     $mobile = $_POST['mobile'];
-     $address = $_POST['address'];
-     $gender = $_POST['gender'];
-     $type = $_POST['type'];
-    // variables for input data
- 
-    // sql query for inserting data into database
- 
-          $sql_query = "INSERT INTO users (username, password, fname, lname, mobile, address, gender, type) VALUES('$username','$password', '$fname', '$lname', '$mobile', '$address', '$gender', '$type')";
-          mysqli_query($con, $sql_query);
-        // sql query for inserting data into database
-
-?>
 <?php
-    include 'connection.php'; //connect the connection page 
+    include '../connection.php'; //connect the connection page 
     if(empty($_SESSION)) // if the session not yet started     
         session_start(); 
-    if(isset($_SESSION['username']))
-    { // if already login   
-        header("location: home.php"); // send to home page   
+
+    if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
+    { // if already login
+        header("location: superadmin/"); // send to home page   
         exit;
-    } 
- 
-}
+    }
+    else if(isset($_SESSION['uname'])&&$_SESSION['user_type']=='Super Admin')
+    { // if already login
+        header("location: admin/"); // send to home page   
+        exit;
+    }
+    else if($_SESSION['user_type']==NULL){
+        header("location: ../"); // send to home page   
+        exit;
+    }
 ?>
 
 <html>
     <head>
-        <link rel="stylesheet" href="css/signup.css">
-        <link rel="shortcut icon" href="images/head_logo.png" />
+        <link rel="stylesheet" href="../css/index.css">
+        <linl rel="stylesheet" href="../css/hotel-services.css">
+        <link rel="shortcut icon" href="../images/head_logo.png" />
+        <script src="scripts/Slideshow.js"></script>
     </head>
-    <title>Sign Up</title>
+    <title>BBhotel</title>
     
     <script language="javascript" type="text/javascript">
         function fun_val()
@@ -111,6 +99,11 @@
             text-align: center;
         }
         
+        .type {
+            position: relative;
+            top: 60px;
+            left: 35px;
+        }
         .login_text {
             position: absolute;
             text-align: center;
@@ -139,7 +132,7 @@
         /* Center the image and position the close button */
         .login_container {
             position: relative;
-            height: 240px;
+            height: 260px;
             padding: 16px;
         }
         
@@ -229,40 +222,34 @@
         <div class="navbar">
             <div class="logo">
                 <a href="index.php">
-                    <img src="images/logo.png" width="75px;">
+                    <img src="../images/logo.png" width="75px;">
                 </a>
             </div>
+            
             <div class="menu">
                 <div class="dropdown_content">
-                    <button class="dropbutton">DICOVER THE HOTEL</button>
+                    <button class="dropbutton">DISCOVER THE HOTEL</button>
                     <div class="dropdown_contents">
-                        <a href="discover-hotel.php#virtual-tour">VIRTUAL TOUR</a>
-                        <a href="discover-hotel.php#hotel-services">HOTEL SERVICES</a>
-                        <a href="discover-hotel.php#awards">AWARDS</a>
+                        <a href="hotel-services.php">HOTEL SERVICES</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
-                    <button class="dropbutton">ROOMS & SUITES</button>
+                    <button class="dropbutton">ROOMS & RESERVATIONS</button>
                     <div class="dropdown_contents">
-                        <a href="rooms-suites.php#rooms">ROOMS</a>
-                        <a href="rooms-suites.php#junior-suites">JUNIOR SUITES</a>
-                        <a href="rooms-suites.php#suites">SUITES</a>
-                        <a href="rooms-suites.php#diamond-suites">DIAMOND SUITES</a>
+                        <a href="../customers-rooms.php">ROOMS</a>
+                        <a href="../reservation.php">RESERVATIONS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">NEWS & SPECIAL OFFERS</button>
                     <div class="dropdown_contents">
-                        <a href="news-special-offers.php#news">NEWS</a>
-                        <a href="news-special-offers.php#special-offers">SPECIAL OFFERS</a>
+                        <a href="special-offers.php">SPECIAL OFFERS</a>
                     </div>
                 </div>
                 <div class="dropdown_content">
                     <button class="dropbutton">PRACTICAL INFORMATION</button>
                     <div class="dropdown_contents">
-                        <a href="practical-information.php#practical-details">PRACTICAL DETAILS</a>
-                        <a href="practical-information.php#contact-us">CONTACT US</a>
-                        <a href="practical-information.php#gift-ideas">GIFT IDEAS</a>
+                        <a href="contact-us.php">CONTACT US</a>
                     </div>
                 </div>
             </div>
@@ -270,8 +257,8 @@
             <div class="content_account_user">
                 <button class="account_user" >MY ACCOUNT</button>
                 <div class="contents_account_user">
-                    <a href="#" class="dropbutton_account" onclick="document.getElementById('login_pop').style.display='block'" style="width:auto;">LOG IN</a>
-                    <a href="signup.php">SIGN UP</a>
+                    <a href="profile.php">PROFILE</a>
+                    <a href="../logout.php">LOG OUT</a>
                 </div>
             </div>
         </div>
@@ -281,13 +268,16 @@
                 <div class="login_container">
                     <span class="login_text">BBhotel | Log In</span>
                     <span class="User">
-                        <input type="text" placeholder="Enter Username" name="username" required>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
                     </span>
                     <span class="Pass">
-                        <input type="password" placeholder="Enter Password" name="password" required>
+                        <input type="password" placeholder="Enter Password" name="pword" required>
                     </span>
                     <span class="password"><a href="#">forgot your password?</a></span>
-                    
+                    <span class="type">
+                        <input type="radio" name="user_type" value="Super Admin" required>Super Admin &nbsp;
+                        <input type="radio" name="user_type" value="Customer" required>Customer
+                    </span>
                     <button class="login_button" type="submit" name="submit" onClick="return fun_val();">Login</button>
                     
                     <span class="noaccount">
@@ -299,7 +289,6 @@
 
                 <div class="login_container2" style="background-color:#f1f1f1">
                     <button type="button" onclick="document.getElementById('login_pop').style.display='none'" class="cancel_button">Cancel</button>
-                    
                 </div>
             </form>
         </div>
@@ -315,52 +304,53 @@
         </script>
         
         <div id="content_con_login">
+            
+            <div class="Bebe">
+                
+            </div>
+            
+            </a>
             <div id="content_login">
-                <form action="<?php $_PHP_SELF; ?>" method="post">
-                    <div class="signup_text">BBhotel | Sign Up</div>
-                    <div class="signup_con">
-                        <span class="uname">
-                            <b>Username</b>
-                            <input type="text" placeholder="Enter Username" name="username" required>
-                        </span>
-                        <span class="pword">
-                            <b>Password</b>
-                            <input type="password" placeholder="Enter Password" name="password" required>
-                        </span>
-                        <span class="cpword">
-                            <b>Confirm Password</b>
-                            <input type="password" placeholder="Enter Confirm Password" name="password" required>
-                        </span>
-                        <span class="fname">
-                            <b>First Name</b>
-                            <input type="text" placeholder="Enter First Name" name="fname" required>
-                        </span>
-                        <span class="lname">
-                            <b>Last Name</b>
-                            <input type="text" placeholder="Enter Last Name" name="lname" required>
-                        </span>
-                        <span class="mobile">
-                            <b>Mobile Number</b>
-                            <input type="text" placeholder="Enter Mobile" name="mobile" required>
-                        </span>
-                        <span class="address">
-                            <b>Address</b>
-                            <input type="text" placeholder="Enter Address" name="address" required>
-                        </span>
-                        <span class="gender">
-                            <b>Gender:</b> <br>
-                            <input type="radio" name="gender" value="Female">Female <br>
-                            <input type="radio" name="gender" value="Male">Male <br><br>
-                        </span>
-                        <span class="type">
-                            <b>User Type:</b> <br>
-                            <input type="radio" name="type" value="Super Admin" disabled>Super Admin <br>
-                            <input type="radio" name="type" value="Admin" disabled>Admin <br>
-                            <input type="radio" name="type" value="Customer" required>Customer <br><br>
-                        </span>
-                        <button class="signup_button" type="submit" name="submit">Sign Up</button>
-                    </div>
-                </form>
+                <div class="vslider">
+                    <figure>
+                        <div class="slide">
+                            <div class="virtual">
+                                 <br>You want a Hotel where you can enjoy your stay? <br>
+                                 Bebe Hotel is perfect for you. It has different amenities for you to enjoy anf relax.
+                            </div>
+                            <img src="../images/slides/1.jpg">
+                        </div>
+
+                        <div class="slide">
+                            <div class="gym">
+                                <h2>Fitness Center</h2>
+                                <p>Bebe Hotel has it's own Gym for those who like to exercise. It has all gym equipments that you need </p>
+                            </div>
+                            <img src="../images/advbooking/8.jpg">
+                        </div>
+
+                        <div class="slide">
+                            <div class="spa">
+                                <h2>Spa</h2>
+                                <p>Bebe Hotel also offers massaging services where good massage therapist are hired. Our spa is perfect for you if you need to relax.</p>
+                            </div>
+                            <img src="../images/advbooking/9.jpg">
+                        </div>
+
+                        <div class="slide">
+                            <div class="bar">
+                                <h2>Bar</h2>
+                                <p>Love to party? Bebe Hotel has also it's own bar for you to party all night. Don't let your night to be bored and dull.</p>
+                            </div>
+                            <img src="../images/advbooking/11a.jpg">
+                        </div>
+
+                        <div class="slide">
+                            ,
+                            <img src="../images/advbooking/10a.jpg">
+                        </div>
+                    </figure>
+                </div>
             </div>
             <div id="footer">
                 BBhotel &copy 2017
