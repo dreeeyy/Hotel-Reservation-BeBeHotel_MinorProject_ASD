@@ -84,7 +84,7 @@ body {
 }
 
 .content_account_user .account_user {
-    font-size: 12px;    
+    font-size: 11px;    
     border: none;
     outline: none;
     color: white;
@@ -122,32 +122,76 @@ body {
 
 /*Content*/
 #content_con_login {
-	position: relative;
-	margin: auto;
-	height: 700px;
-	width: 1300px;
-	box-shadow: 0px 2px 5px black;
+    position: relative;
+    margin: auto;
+    width: 1300px;
+    box-shadow: 0px 2px 5px black;
 }
 
 #content_login {
-	position: relative;
-	margin: auto;
-	height: 660px;
-	width: 1300px;
-	background-color: white;
+    position: relative;
+    width: 1300px;
+    height: 655px;
+    background-color: white;
+    font-family: Arial;
+    z-index: -1;
+}
+.content_profile {
+    position: relative;
+    top: 100px;
+    left: 150px;
+    width: 1000px;
+    height: 500px;
+    background-color: #fce4a9;
+    font-family: Arial;
+    text-align: left;
+}
+
+.profPic {
+    position: relative;
+    border-radius: 50%;
+    top: 25px;
+    left: 50px;
+}
+
+.prof_table table tr td{
+    position: relative;
+    color: gray;
+    top: 50px;
+    padding: 0px 20px;
+    font-size: 15px;
+    background-color: white;
+    color: white;
+    z-index: 5;
+}
+
+.basicInfo table{
+    position: relative;
+    width: 600px;
+    top: -180px;
+    left: 230px;
+}
+.basicInfo table tr td {
+    position: relative;
+    padding: 0px 50px;
+    top: 20px;
+    font-size: 15px;
+    background-color: white;
+    opacity: 90%;
+    color: black;
 }
 
 /*Footer*/
 #footer {
-	position: relative;
-	bottom: 0;
-	margin: auto;
-	height: 26px;
-	width: 1300px;
-	background-color: darkgoldenrod;
-	text-align: center;
-	padding-top: 14px;
-	font-size: 12px;
-	color: white;
-	font-family: Arial;
+    position: relative;
+    bottom: 0;
+    margin: auto;
+    height: 26px;
+    width: 1300px;
+    background-color: darkgoldenrod;
+    text-align: center;
+    padding-top: 14px;
+    font-size: 12px;
+    color: white;
+    font-family: Arial;
 }
